@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adopt a Pet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo">AdoptMe</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pets">Available Pets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a pet..."
+        />
+        <button onclick="searchPet()">Search</button>
+      </div>
+    </nav>
+    <h1>Adopt a <span>Pet</span> Today</h1>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Welcome to AdoptMe, where we connect loving families with animals in
+        need of a forever home. Our mission is to ensure every pet finds a
+        safe, happy place to live. Browse our collection of available pets and
+        make a difference today!
+      </p>
+    </section>
+
+    <section id="pets">
+      <h2>Available Pets</h2>
+      <div class="card" data-name="dog">
+        <img src="dog.jpg" alt="Jerry" />
+        <h3>Meet Jerry</h3>
+        <p>Jerry is a friendly dog looking for a loving home.</p>
+      </div>
+
+      <div class="card" data-name="cat">
+        <img src="cat.jpg" alt="Tom" />
+        <h3>Meet Tom</h3>
+        <p>Tom is a handsome and affectionate cat searching for his forever home.</p>
+      </div>
+
+      <div class="card" data-name="rabbit">
+        <img src="rabbit.jpg" alt="Bella" />
+        <h3>Meet Bella</h3>
+        <p>Bella is a playful rabbit who loves to hop around joyfully.</p>
+      </div>
+
+      <div class="card" data-name="parrot">
+        <img src="parrot.jpg" alt="Coco" />
+        <h3>Meet Coco</h3>
+        <p>Coco is a colorful parrot who will brighten your day with her cheerful chirping.</p>
+      </div>
+
+      <div class="card" data-name="hamster">
+        <img src="hamster.jpg" alt="Max" />
+        <h3>Meet Max</h3>
+        <p>Max is a curious little hamster who loves to explore and snuggle.</p>
+      </div>
+
+      <div class="card" data-name="fish">
+        <img src="fish.jpg" alt="Goldie" />
+        <h3>Meet Goldie</h3>
+        <p>Goldie is a peaceful goldfish who brings calm to any home.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label for="email">Your Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" rows="4" placeholder="Write your message"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <h4>A gift of new life</h4>
+    <p>&copy; 2025 AdoptMe.com | All rights reserved.</p>
+  </footer>
+
+  <script>
+    function searchPet() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        const name = card.getAttribute("data-name");
+        if (name.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
